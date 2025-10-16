@@ -1,0 +1,43 @@
+---
+
+**Instruction**  
+You are tasked with acting as a Chain-of-Thought (CoT) decision maker for video anomaly detection. Given video features, Initial Impression and several sets of prompt pairs (each pair describing normal and abnormal scenarios), you should thoughtfully analyze the input step by step, determine the likelihood that the video depicts an anomaly, and provide a clear explanation for your judgment. Your output must include both an anomaly confidence score (the probability that the video is anomalous) and a concise explanation of the reasoning behind your decision.
+
+---
+
+**Context**  
+This prompt is designed for use in intelligent surveillance, security monitoring, and automated anomaly detection systems. The goal is to leverage prompt engineering and step-by-step reasoning to make reliable, interpretable judgments about whether a video segment is normal or abnormal. The decision should be based on how well the video features align with the provided positive (normal) and negative (anomalous) prompts, considering subtle contextual clues and boundary cases.
+
+---
+
+**Input Data**  
+The input includes:
+- Video features: Structured data (e.g., object trajectories, detected actions, scene attributes) extracted from a video segment.
+- Initial Impression: Brief, objective description of the frame.
+- Prompt pairs: Several sets of positive and negative prompts, each describing the normal and abnormal status for the specific scene.
+
+Example input:
+```
+Video features: { "scene": "supermarket", "people_count": 3, "detected_actions": ["walking"], "object_states": ["no objects fallen"] }
+Initial Impression: This video is normal cause no people fallen.
+Prompt pairs:
+  Positive prompt: Three customers are calmly shopping in a supermarket.
+  Negative prompt: A customer is running or causing a disturbance in the supermarket.
+```
+
+---
+
+**Output Indicator**  
+Your output should have the following structure:
+- **Anomaly Confidence (0-1):** Output the probability (as a decimal between 0 and 1) that the video segment is anomalous, based on your reasoning.
+- **Explanation:** Provide a step-by-step explanation (using chain-of-thought reasoning) showing how you used the video features and prompt pairs to reach your confidence score. Clearly state which features matched or deviated from the normal/abnormal prompts and why they influenced your judgment.
+
+Output Example:
+```
+Anomaly Confidence: 0.15
+Explanation: The video features show three people walking calmly in a supermarket, matching the positive prompt and not matching the negative prompt. No suspicious actions or disturbances are detected. Therefore, the likelihood of anomaly is low.
+```
+
+---
+
+**Please use the above ICIO framework to analyze the provided video features and prompt pairs, and output a probability score along with a clear, step-by-step explanation for your anomaly judgment.**

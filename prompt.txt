@@ -1,0 +1,55 @@
+---
+
+**Instruction**  
+You are required to analyze the given video frame and generate a set of prompt pairs for video anomaly detection. First, provide your initial impression—a brief, objective description of what you observe in the frame. Then, create a positive prompt describing the normal status of the scene and a negative prompt describing the abnormal or anomalous status. These prompt pairs will help clearly distinguish between normal and abnormal boundaries for downstream tasks.
+
+---
+
+**Context**  
+This task is primarily used in intelligent surveillance and automated security scenarios, where AI must analyze video frames to determine if any anomaly is present. For example, in a retail store, a normal status might be customers shopping calmly, while an anomaly could be someone running, fighting, or falling. The generated prompt pairs should be clear and specific, accurately capturing the typical features of "normal" and "anomalous" states to facilitate model training and inference.
+
+---
+
+**Input Data**  
+The input is a single frame from a video, which may depict indoor or outdoor scenes with people, objects, animals, etc. You should generate corresponding positive and negative prompts based on the actual content of the video frame. For example, the input might show "three customers walking normally in a store" or "a person falling in a parking lot."
+
+---
+
+**Output Indicator**  
+Your output should include:
+- **Initial Impression:** A concise, objective description of what is happening in the video frame.
+- **Prompt Pair:**  
+  - Positive prompt: Use concise and specific language to describe the normal status depicted in the video frame.  
+  - Negative prompt: Use concise and specific language to describe the abnormal or anomalous status in the same context.
+
+Requirements:
+- The initial impression should be factual and neutral, summarizing the main elements of the frame.
+- Each prompt pair should focus on the same scene or elements, highlighting the difference between normal and abnormal states.
+- Language should be clear and succinct for easy model understanding.
+- Output format example:
+  ```
+  Initial Impression: [Brief, objective description of the frame]
+  Positive prompt: [Description of the normal status]
+  Negative prompt: [Description of the anomalous status]
+  ```
+
+---
+
+**Sample Prompt (for AI model use):**
+
+---
+
+Given the following video frame description, generate an initial impression and a set of prompt pairs for video anomaly detection:
+
+[Video Frame Description: Please insert the specific content of the video frame here, e.g., "Three customers are calmly shopping in a supermarket."]
+
+Output format:
+```
+Initial Impression: [Brief, objective description of the frame]
+Positive prompt: [Describe the normal behavior in this frame]
+Negative prompt: [Describe the abnormal behavior in this frame]
+```
+
+---
+
+**Please follow the above ICIO structure to generate an initial impression and prompt pairs based on the input video frame description.**
