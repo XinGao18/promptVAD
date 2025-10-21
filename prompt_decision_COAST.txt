@@ -1,0 +1,47 @@
+---
+
+**Context**  
+Video anomaly detection is a critical task in surveillance and safety monitoring. To improve reliability and interpretability, we use prompt pairs (positive and negative prompts) to define the boundaries between normal and abnormal events. By leveraging Chain-of-Thought (CoT) reasoning, the model can make step-by-step, transparent decisions about whether a video segment is anomalous or not.
+
+---
+
+**Objective**  
+Your objective is to analyze the provided video features and prompt pairs, then determine whether the video segment is anomalous. You should output both the anomaly confidence (the probability that the video is abnormal) and a clear, step-by-step explanation of your reasoning process.
+
+---
+
+**Action**  
+Carefully compare the video features with the positive and negative prompts. Use Chain-of-Thought reasoning:  
+- Step through the relevant features and how they align or conflict with the prompts.  
+- Consider subtle or borderline cases.  
+- Justify your confidence score with logical, transparent reasoning.
+
+---
+
+**Scenario**  
+You are given structured video features (such as detected actions, object states, and scene context) and a pair of prompts describing the normal and abnormal states for the scene. For example, the features might indicate "three people walking calmly in a supermarket," with prompts describing normal shopping versus disruptive behavior.
+
+---
+
+**Task**  
+Given the following input, provide:  
+1. **Anomaly Confidence:** A probability (between 0 and 1) that the video is anomalous.  
+2. **Explanation:** A step-by-step, chain-of-thought explanation of how you reached your decision, referencing the video features and prompt pairs.
+
+**Input Example:**  
+```
+Video features: { "scene": "supermarket", "people_count": 3, "detected_actions": ["walking"], "object_states": ["no objects fallen"] }
+Prompt pairs:
+  Positive prompt: Three customers are calmly shopping in a supermarket.
+  Negative prompt: A customer is running or causing a disturbance in the supermarket.
+```
+
+**Output Format:**  
+```
+Anomaly Confidence: [probability between 0 and 1]
+Explanation: [Step-by-step reasoning comparing video features to prompt pairs, justifying the confidence score.]
+```
+
+---
+
+**Please analyze the input video features and prompt pairs, and output your anomaly confidence and a clear, logical explanation using chain-of-thought reasoning.**

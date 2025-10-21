@@ -242,8 +242,9 @@ pixel_values = pixel_values.to(torch.bfloat16).cuda()
 # show_pixel_values(pixel_values, num_show=16, image_size=448)
 video_prefix = ''.join([f'Frame{i+1}: <image>\n' for i in range(len(num_patches_list))])
 
-with open('prompt.txt', 'r', encoding='utf-8') as f:
+with open('prompt_ROSES.txt', 'r', encoding='utf-8') as f:
     prompt = f.read()
+# different prompts comparision
 # question = video_prefix + 'Are there any anomalies in the video?'
 question = video_prefix + prompt
 # Frame1: <image>\nFrame2: <image>\n...\nFrame8: <image>\n{question}
@@ -251,7 +252,7 @@ response, history = model.chat(tokenizer, pixel_values, question, generation_con
                                num_patches_list=num_patches_list, history=None, return_history=True)
 print(f'User: {question}\nAssistant: {response}')
 
-with open('prompt_decision.txt', 'r', encoding='utf-8') as f:
+with open('prompt_decision_ROSES.txt', 'r', encoding='utf-8') as f:
     question = f.read()
 response, history = model.chat(tokenizer, pixel_values, question, generation_config,
                                num_patches_list=num_patches_list, history=history, return_history=True)

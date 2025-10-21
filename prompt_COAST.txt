@@ -1,0 +1,45 @@
+---
+
+**Context**  
+Video anomaly detection is essential in surveillance, safety monitoring, and automated analysis. To improve the accuracy and interpretability of AI models, it is helpful to define clear boundaries between normal and abnormal states using prompt pairs. Each pair consists of a positive prompt (describing a normal situation) and a negative prompt (describing an abnormal situation) for a given video frame.
+
+---
+
+**Objective**  
+Your goal is to generate a prompt pair for each input video frame. The positive prompt should clearly describe the normal state of the scene, while the negative prompt should describe a possible abnormal or anomalous state. These prompt pairs will be used to guide AI models in distinguishing between normal and abnormal events.
+
+---
+
+**Action**  
+Carefully analyze the content of the provided video frame. Identify the key elements, actions, and context within the frame. Then, craft two concise and specific prompts:
+- A positive prompt that accurately reflects the normal status of the scene.
+- A negative prompt that highlights a plausible anomaly or abnormal behavior in the same context.
+
+---
+
+**Scenario**  
+You are given a video frame from a surveillance or monitoring system. The frame may depict various environments (e.g., supermarket, street, parking lot) and activities (e.g., walking, running, falling). Your task is to generate prompt pairs that can be used to train or evaluate video anomaly detection models.
+
+---
+
+**Task**  
+Given the following video frame description, generate a prompt pair in the specified format:
+
+**Input:**  
+[Insert video frame description here, e.g., "A person is walking calmly in a parking lot."]
+
+**Output format:**  
+```
+Positive prompt: [Describe the normal state in this frame]
+Negative prompt: [Describe a possible abnormal state in this frame]
+```
+
+**Example:**  
+```
+Positive prompt: A person is walking calmly in the parking lot.
+Negative prompt: A person is lying on the ground or appears to have fallen in the parking lot.
+```
+
+---
+
+**Please analyze the input video frame and generate a positive and negative prompt pair that clearly distinguishes between normal and abnormal states.**
